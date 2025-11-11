@@ -14,12 +14,16 @@ A stack-based buffer overflow vulnerability exists in the latest firmware of the
 ---
 ### **Vulnerability Details**
 In the httpd binary file, the function corresponding to /goform/SetVirtualServerCfg is the formSetVirtualSer function.
+
 ![1](./img/1.png)
 In the formSetVirtualSer function, the webGetVar function retrieves the value of the list parameter from a1 and assigns it to Var, and then calls the save_virtualser_data function.
+
 ![2](./img/2.png)
 In the function, since the character corresponding to 126 is "~", but the list parameter normally does not contain this character, the for loop will not be entered.
+
 ![3](./img/3.png)
 Subsequently, because neither "%[^,]" nor "%s" of sscanf specifies a maximum field width, it writes bytes beyond the buffer when encountering input that is longer than v12/v13/v14/v15, resulting in a buffer overflow vulnerability.
+
 ![4](./img/4.png)
 
 
@@ -45,5 +49,6 @@ list=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 ```
 
 After the request was sent, a segmentation fault occurred in the service:
+
 ![5](./img/5.png)
 ![6](./img/6.png)
