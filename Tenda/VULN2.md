@@ -14,14 +14,14 @@ A stack overflow vulnerability exists in the `list` parameter of the `/goform/se
 ### **Vulnerability Details**
 In the `httpd` binary, the function corresponding to `/goform/setPptpUserList` is `formSetPPTPUserList`.
 
-![[TENDA/AC21_setPptpUserList缓冲区溢出漏洞材料/img/1.png]]
+![7](./img/7.png)
 
 The function first uses `webGetVar` to retrieve the value of the `list` parameter from `a1` and assign it to `s`. It then uses `strspn` to skip leading `"~"` characters and assigns the pointer to the remaining valid content to `v20`.
-![[TENDA/AC21_setPptpUserList缓冲区溢出漏洞材料/img/2.png]]
+![8](./img/8.png)
 
 
 It then calls `getEachListFromWeb`, where the `"%[^;]"` and `"%s"` format specifiers in `sscanf` do not define maximum field widths, and the `v21` buffer is smaller than `v20`, resulting in a stack overflow vulnerability.
-![[TENDA/AC21_setPptpUserList缓冲区溢出漏洞材料/img/3.png]]
+![9](./img/9.png)
 
 
 ---
@@ -46,6 +46,6 @@ list=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 After the request was sent, a segmentation fault occurred in the service:
 
-![[TENDA/AC21_setPptpUserList缓冲区溢出漏洞材料/img/4.png]]
+![10](./img/10.png)
 
-![[TENDA/AC21_setPptpUserList缓冲区溢出漏洞材料/img/5.png]]
+![11](./img/11.png)
