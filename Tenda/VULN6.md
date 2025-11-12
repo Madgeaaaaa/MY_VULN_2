@@ -14,10 +14,10 @@ In the latest firmware version V16.03.08.16 for the Tenda AC21 router, the `sche
 ### **Vulnerability Details**
 
 In the `httpd` binary, the function corresponding to `/goform/openSchedWifi` is `schedStartTime`.
-![[27.png]]
+![1](./img/27.png)
 
 In the `setSchedWifi` function, the `webGetVar` function is used to retrieve the value of the `schedStartTime` parameter from `a1` and assign it to `v8`. The pointer `ptr` points to a heap buffer allocated with `malloc(0x19u)`, which is 25 bytes in size. Therefore, directly calling `strcpy` on this buffer can result in a buffer overflow.
-![[26.png]]
+![2](./img/26.png)
 
 
 ---
@@ -40,5 +40,5 @@ schedWifiEnable=1&schedStartTime=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 ```
 
 By sending this poc, an attacker can achieve the effect of a denial-of-service(DOS) attack .
-![[28.png]]
-![[29.png]]
+![3](./img/28.png)
+![4](./img/29.png)
