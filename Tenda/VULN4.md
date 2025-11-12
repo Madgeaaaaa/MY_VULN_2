@@ -14,13 +14,13 @@ In the latest firmware version V16.03.08.16 of the Tenda AC21 router, the `urls`
 ### **Vulnerability Details**
 
 In the `httpd` binary, the function corresponding to `/goform/saveParentControlInfo` is `saveParentControlInfo`.
-![[21.png]]
+![1](./img/21.png)
 
 In the `saveParentControlInfo` function, `compare_parentcontrol_time` is called first. If the `time` parameter is non-empty and the start and end times differ, `compare_parentcontrol_time` returns `0` and execution enters the `if` branch. Inside that branch `ptr` is allocated on the heap with `malloc(0x254)` (a buffer of `0x254` bytes), and `get_parentControl_list_Info` is invoked afterwards.
-![[17.png]]
+![2](./img/17.png)
 
 In this function, the `webGetVar` function is first used to obtain the value of the `urls` parameter from `a1` and assign it to `v8`. Then, `strcpy` copies the data pointed to by `v8` to the heap buffer without any length check, resulting in a heap-based buffer overflow vulnerability.
-![[18.png]]
+![3](./img/18.png)
 
 
 ---
@@ -44,4 +44,5 @@ deviceId=40%3Ac2%3Aba%3A44%3A9d%3A93&deviceName=qqq&enable=1&time=19%3A00-21%3A0
 ```
 
 After the request was sent, a segmentation fault occurred in the service:
-![[19.png]]![[20.png]]
+![4](./img/19.png)
+![5](./img/20.png)
