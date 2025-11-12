@@ -14,9 +14,9 @@ In the latest firmware version V16.03.08.16 of the Tenda AC21 router, the `devic
 ### **Vulnerability Details**
 
 In the `httpd` binary, the function corresponding to `/goform/saveParentControlInfo` is `saveParentControlInfo`.
-![[22.png]]
+![1](./img/22.png)
 In the `saveParentControlInfo` function, `webGetVar` is used to retrieve the `deviceId` parameter from `a1` and assign it to `Var`. The code then enters a branch where `s` is a heap buffer allocated with `malloc(0x254)` (0x254 bytes). A subsequent `strcpy` that copies `Var` into `s` without any bounds checking can therefore lead to a heap-based buffer overflow.
-![[23.png]]
+![2](./img/23.png)
 
 
 ---
@@ -39,5 +39,5 @@ deviceId=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 ```
 
 After the request was sent, a segmentation fault occurred in the service:
-![[24.png]]
-![[25.png]]
+![3](./img/24.png)
+![4](./img/25.png)
