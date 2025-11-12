@@ -15,13 +15,13 @@ In the latest firmware version V16.03.08.16 of the Tenda AC21 router, the `reboo
 ### **Vulnerability Details**
 In the `httpd` binary, the function corresponding to `/goform/SetSysAutoRebbotCfg` is `formSetRebootTimer`.
 
-![[3.png]]
+![1](./img/12.png)
 
 The function first uses the `webGetVar` function to retrieve the `rebootTime` parameter from `a1` and assigns it to `v2`, and then calls the `sub_497154` function.
-![[4.png]]
+![2](./img/13.png)
 
 In this function the length of the input parameter is not limited. The `v5` buffer is only 8 bytes long, while `v3` and `v4` can each be up to 10 digits (an `int` is typically 32-bit with range `-2147483648` to `2147483647`). Therefore there is a buffer-overflow vulnerability at the `sprintf` call.
-![[5.png]]
+![3](./img/14.png)
 
 
 ---
@@ -46,5 +46,5 @@ rebootTime=999999999:999999999
 ```
 
 After the request was sent, a segmentation fault occurred in the service:
-![[1.png]]
-![[2.png]]
+![4](./img/15.png)
+![5](./img/16.png)
