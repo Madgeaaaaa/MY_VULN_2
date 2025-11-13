@@ -15,13 +15,13 @@ In the latest firmware version V16.03.08.16 for the Tenda AC21 router, the `time
 ### **Vulnerability Details**
 
 In the httpd binary, the function corresponding to **`/goform/SetSysTimeCfg`** is **`fromSetSysTime`**.
-![[35.png]]
+![1](./img/35.png)
 
 In the `setSchedWifi` function, the `sub_496104` function is invoked.
-![[36.png]]
+![2](./img/36.png)
 
 In the `sub_496104` function there are multiple stack-based buffer overflow points: calls to `strcpy` and `sscanf` do not enforce maximum input lengths, which can allow attacker-controlled data to overwrite stack memory and lead to crashes or potential code execution.
-![[37.png]]
+![3](./img/37.png)
 
 
 ---
@@ -44,5 +44,5 @@ timeZone=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 ```
 
 By sending this poc, an attacker can achieve the effect of a denial-of-service(DOS) attack .
-![[38.png]]
-![[39.png]]
+![4](./img/38.png)
+![5](./img/39.png)
