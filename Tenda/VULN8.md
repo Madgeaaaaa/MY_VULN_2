@@ -17,7 +17,7 @@ In the latest firmware version V16.03.08.16 for the Tenda AC21 router, the `time
 In the httpd binary, the function corresponding to **`/goform/SetSysTimeCfg`** is **`fromSetSysTime`**.
 ![1](./img/35.png)
 
-In the `setSchedWifi` function, the `sub_496104` function is invoked.
+In the `fromSetSysTime` function, the `sub_496104` function is invoked.
 ![2](./img/36.png)
 
 In the `sub_496104` function there are multiple stack-based buffer overflow points: calls to `strcpy` and `sscanf` do not enforce maximum input lengths, which can allow attacker-controlled data to overwrite stack memory and lead to crashes or potential code execution.
