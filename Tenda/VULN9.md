@@ -15,13 +15,13 @@ In the latest firmware version V16.03.08.16 for the Tenda AC21 router, the `time
 ### **Vulnerability Details**
 
 In the httpd binary, the function corresponding to **`/goform/SetSysTimeCfg`** is **`fromSetSysTime`**.
-![[35.png]]
+![1](./img/35.png)
 
 In the `fromSetSysTime` function, if the input parameter `timeType` is set to `manual`, the `sub_4964E4` function will be called.
-![[40.png]]
+![2](./img/40.png)
 
 In `sub_4964E4`, after reading the `time` value, `sscanf` is called without maximum field widths, which can lead to a stack buffer overflow.
-![[41.png]]
+![3](./img/41.png)
 
 
 ---
@@ -44,5 +44,5 @@ timeType=manual&timePeriod=&ntpServer=&timeZone=0%3A00&time=aaaaaaaaaaaaaaaaaaaa
 ```
 
 By sending this poc, an attacker can achieve the effect of a denial-of-service(DOS) attack .
-![[42.png]]
-![[39.png]]
+![4](./img/42.png)
+![5](./img/43.png)
