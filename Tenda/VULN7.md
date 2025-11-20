@@ -1,3 +1,6 @@
+------
+### **CVE-2025-13445**
+
 **Affected Product**: Tenda AC21 Router
 
 **Affected Firmware Versions**:  V16.03.08.16
