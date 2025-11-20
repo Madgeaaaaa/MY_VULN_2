@@ -1,9 +1,12 @@
+------
+
 **Affected Product**: Tenda AC21 Router
 
 **Affected Firmware Versions**:  V16.03.08.16
 
 **Vulnerability Type**: Buffer Overflow Vulnerability
 
+It has been merged into CVE-2023-24333.
 ------
 ### **Vulnerability Description**
 
