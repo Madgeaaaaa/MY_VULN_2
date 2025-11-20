@@ -7,6 +7,8 @@
 **Vulnerability Type**: Buffer Overflow Vulnerability
 
 It has been merged into CVE-2023-24333.
+
+
 ------
 ### **Vulnerability Description**
 
