@@ -7,7 +7,7 @@
 ------
 ### **Vulnerability Description**
 
-The firmware V15.11.0.6 (1068_1546_841) of the Tenda AC10 enterprise router contains an information leak. The RouterCfm.cfg configuration file can be read without authorization, leading to the leakage of sensitive information such as account passwords.
+The Tenda AC10 enterprise router firmware version V15.11.0.6 (1068_1546_841) contains an information disclosure vulnerability. The RouterCfm.cfg configuration file can be accessed without authentication through the /cgi-bin/DownloadCfg/RouterCfm.cfg endpoint. This allows remote attackers to obtain sensitive information, including administrative account credentials and other configuration parameters.
 
 
 ---
