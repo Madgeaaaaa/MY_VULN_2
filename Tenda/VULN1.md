@@ -1,8 +1,15 @@
+------
+### **CVE-2025-65220**
+
 **Affected Product**: Tenda AC21 Router
 
 **Affected Firmware Versions**:  V16.03.08.16
 
 **Vulnerability Type**: Buffer Overflow Vulnerability
+
+**Organization**: School of Cybersecurity, Northwestern Polytechnical University
+
+**Author**: 邱佳慧 毛伯敏 郭鸿志
 
 
 ------
