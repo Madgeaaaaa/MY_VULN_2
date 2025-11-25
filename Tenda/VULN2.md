@@ -7,9 +7,7 @@
 
 ------
 ### **Vulnerability Description**
-
-A stack overflow vulnerability exists in the `list` parameter of the `/goform/setPptpUserList` handler within the `/bin/httpd` binary of the Tenda AC21 router running the latest firmware version V16.03.08.16. This flaw can lead to denial-of-service attacks and arbitrary command execution.
-
+A stack-based buffer overflow vulnerability exists in the `list` parameter processed by the `/goform/setPptpUserList` handler inside the `/bin/httpd` binary of the Tenda AC21 router running the latest firmware version V16.03.08.16. A remote attacker can trigger this flaw by sending a crafted HTTP request, leading to a denial-of-service condition or potentially arbitrary code execution.
 ---
 ### **Vulnerability Details**
 In the `httpd` binary, the function corresponding to `/goform/setPptpUserList` is `formSetPPTPUserList`.
