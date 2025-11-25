@@ -1,13 +1,22 @@
+------
+### **CVE-2025-65221**
+
 **Affected Product**: Tenda AC21 Router
 
 **Affected Firmware Versions**:  V16.03.08.16
 
 **Vulnerability Type**: Buffer Overflow Vulnerability
 
+**Organization**: School of Cybersecurity, Northwestern Polytechnical University
+
+**Author**: 邱佳慧 毛伯敏 郭鸿志
 
 ------
 ### **Vulnerability Description**
+
 A stack-based buffer overflow vulnerability exists in the `list` parameter processed by the `/goform/setPptpUserList` handler inside the `/bin/httpd` binary of the Tenda AC21 router running the latest firmware version V16.03.08.16. A remote attacker can trigger this flaw by sending a crafted HTTP request, leading to a denial-of-service condition or potentially arbitrary code execution.
+
+
 ---
 ### **Vulnerability Details**
 In the `httpd` binary, the function corresponding to `/goform/setPptpUserList` is `formSetPPTPUserList`.
