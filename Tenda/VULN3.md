@@ -8,7 +8,7 @@
 ------
 ### **Vulnerability Description**
 
-In the latest firmware version V16.03.08.16 of the Tenda AC21 router, the `rebootTime` parameter of `/goform/SetSysAutoRebbotCfg` in the `/bin/httpd` binary contains a stack-based buffer overflow vulnerability that can lead to denial-of-service and arbitrary command execution.
+The latest firmware version V16.03.08.16 of the Tenda AC21 router contains a stack-based buffer overflow vulnerability in the `rebootTime` parameter processed by the `/goform/SetSysAutoRebbotCfg` handler within the `/bin/httpd` binary. A remote attacker can exploit this flaw by sending a crafted HTTP request, potentially resulting in a denial-of-service condition or arbitrary code execution.
 
 
 ---
