@@ -1,4 +1,4 @@
-**Affected Product**: Tenda AC10 Router
+**Affected Product**: Tenda W15E v2 Router
 
 **Affected Firmware Versions**:  V15.11.0.6(1068_1546_841)
 
@@ -7,7 +7,7 @@
 ------
 ### **Vulnerability Description**
 
-The Tenda AC10 enterprise router firmware version V15.11.0.6 (1068_1546_841) contains an information disclosure vulnerability. The RouterCfm.cfg configuration file can be accessed without authentication through the /cgi-bin/DownloadCfg/RouterCfm.cfg endpoint. This allows remote attackers to obtain sensitive information, including administrative account credentials and other configuration parameters.
+The Tenda W15E v2 router firmware version V15.11.0.6 (1068_1546_841) contains an information disclosure vulnerability. The RouterCfm.cfg configuration file can be accessed without authentication through the /cgi-bin/DownloadCfg/RouterCfm.cfg endpoint. This allows remote attackers to obtain sensitive information, including administrative account credentials and other configuration parameters.
 
 
 ---
