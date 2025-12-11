@@ -10,7 +10,7 @@
 ------
 ### **Vulnerability Description**
 
-In the latest firmware version V16.03.08.12 for the Tenda AC20 router, the `schedStartTime` parameter of `/goform/openSchedWifi` in the `/bin/httpd` binary contains a buffer‑overflow vulnerability that can lead to denial‑of‑service and potentially remote command execution.
+In the latest firmware version V16.03.08.12 for the Tenda AC20 router, the `schedStartTime` parameter and the `schedEndTime` parameter of `/goform/openSchedWifi` in the `/bin/httpd` binary contains a buffer‑overflow vulnerability that can lead to denial‑of‑service and potentially remote command execution.
 
 
 ---
@@ -19,7 +19,7 @@ In the latest firmware version V16.03.08.12 for the Tenda AC20 router, the `sche
 In the `httpd` binary, the function corresponding to `/goform/openSchedWifi` is `schedStartTime`.
 ![1](./img/1.png)
 
-In the `setSchedWifi` function, the `webGetVar` function is used to retrieve the value of the `schedStartTime` parameter from `a1` and assign it to `v8`. The pointer `ptr` points to a heap buffer allocated with `malloc(0x19u)`, which is 25 bytes in size. Therefore, directly calling `strcpy` on this buffer can result in a buffer overflow.
+In the `setSchedWifi` function, the `webGetVar` function is used to retrieve the value of the `schedStartTime` parameter from `a1` and assign it to `v8`. The pointer `ptr` points to a heap buffer allocated with `malloc(0x19u)`, which is 25 bytes in size. Therefore, directly calling `strcpy` on this buffer can result in a buffer overflow. The `schedEndTime` parameter is the same.
 ![2](./img/2.png)
 
 
