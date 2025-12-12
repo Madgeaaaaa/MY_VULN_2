@@ -26,7 +26,7 @@ The `set_pptpuser_list` function first uses `webGetVar` to retrieve the value of
 ![3](./IMG/3.png)
 
 It then calls `getEachListFromWeb`, where the `"%[^;]"` and `"%s"` format specifiers in `sscanf` do not define maximum field widths, and the `v21` buffer is smaller than `v20`, resulting in a stack overflow vulnerability.
-![4](./IMG/4.png).
+![4](./IMG/4.png)
 
 
 ---
