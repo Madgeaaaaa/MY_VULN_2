@@ -23,7 +23,7 @@ Then, the `formSetPPTPUserList` function calls the `set_pptpuser_list` function.
 
 The `set_pptpuser_list` function first uses `webGetVar` to retrieve the value of the `list` parameter from `a1` and assign it to `s`. It then uses `strspn` to skip leading `"~"` characters and assigns the pointer to the remaining valid content to `v20`.
 
-![3](./IMG/3.png).
+![3](./IMG/3.png)
 
 It then calls `getEachListFromWeb`, where the `"%[^;]"` and `"%s"` format specifiers in `sscanf` do not define maximum field widths, and the `v21` buffer is smaller than `v20`, resulting in a stack overflow vulnerability.
 ![4](./IMG/4.png).
