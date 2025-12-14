@@ -1,3 +1,5 @@
+------
+### **CVE-2025-14286**
 
 **Affected Product**: Tenda AC9 Router
 
@@ -5,6 +7,9 @@
 
 **Vulnerability Type**: Sensitive Information Leakage
 
+**Organization**: School of Cybersecurity, Northwestern Polytechnical University
+
+**Author**: 邱佳慧 毛伯敏 郭鸿志
 
 ------
 ### **Vulnerability Description**
