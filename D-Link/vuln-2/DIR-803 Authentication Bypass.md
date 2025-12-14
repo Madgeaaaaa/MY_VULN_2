@@ -1,9 +1,15 @@
+------
+### **CVE-2025-14528**
 
 **Affected Product**: D-Link DIR-803 Router
 
 **Affected Firmware Versions**:  A1 1.04 and earlier
 
 **Vulnerability Type**: Authentication Bypass
+
+**Organization**: School of Cybersecurity, Northwestern Polytechnical University
+
+**Author**: 邱佳慧 毛伯敏 郭鸿志
 
 
 ------
