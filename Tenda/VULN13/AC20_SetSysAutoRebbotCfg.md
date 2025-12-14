@@ -1,3 +1,5 @@
+------
+### **CVE-2025-14655**
 
 **Affected Product**: Tenda AC20 Router
 
@@ -5,6 +7,9 @@
 
 **Vulnerability Type**: Buffer Overflow Vulnerability
 
+**Organization**: School of Cybersecurity, Northwestern Polytechnical University
+
+**Author**: 邱佳慧 毛伯敏 郭鸿志
 
 ------
 ### **Vulnerability Description**
